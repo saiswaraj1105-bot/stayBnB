@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StayBNB — AI-Powered Fashion Styling Advisor</title>
+  <meta name="description" content="StayBNB uses AI to deliver personalized fashion recommendations based on facial analysis, skin tone, and style preferences.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<!-- PAGE LOADER -->
+<div class="page-loader">
+  <div class="loader-logo">StayBNB</div>
+  <div class="loader-spinner"></div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a href="#" class="logo">StayBNB</a>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#how-it-works">How It Works</a></li>
+    <li><a href="#styles">Style Gallery</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="Profile.html">Profile</a></li>
+  </ul>
+  <div class="nav-auth">
+    <button class="btn btn-ghost" onclick="openModal('signin')">Sign In</button>
+    <button class="btn btn-primary" onclick="openModal('signup')">Get Started</button>
+    <button class="btn btn-primary" onclick="openModal('profile')">Profile</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="orb orb-purple" style="width:500px;height:500px;top:-100px;left:-150px;"></div>
+  <div class="orb orb-pink" style="width:350px;height:350px;bottom:-50px;right:-100px;"></div>
+  <div class="orb orb-cyan" style="width:250px;height:250px;top:50%;left:55%;"></div>
+
+  <div class="hero-content animate-fadeInUp">
+    <div class="section-tag">✨ AI-Powered Fashion</div>
+    <h1 class="section-title" style="max-width:700px;">
+      Your Personal <span class="gradient-text">StayBNB Stylist</span> Is Here
+    </h1>
+    <p class="section-sub">
+      Upload your photo and let our AI analyze your features, skin tone, and style personality — 
+      delivering custom fashion, hairstyle, and accessory recommendations in seconds.
+    </p>
+    <div style="display:flex;gap:16px;margin-top:32px;flex-wrap:wrap;">
+      <button class="btn btn-primary btn-lg" onclick="openModal('signup')">🚀 Start Free Analysis</button>
+      <a href="#how-it-works" class="btn btn-ghost btn-lg">Learn More →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item"><span class="stat-num">50K+</span><span class="stat-label">Users Styled</span></div>
+      <div class="stat-item"><span class="stat-num">98%</span><span class="stat-label">Satisfaction</span></div>
+      <div class="stat-item"><span class="stat-num">2s</span><span class="stat-label">Avg Analysis</span></div>
+    </div>
+  </div>
+
+  <!-- 3D Slide Carousel -->
+  <div class="carousel-3d" id="carousel3d">
+    <div class="carousel-scene">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-card" data-index="0">
+          <div class="card-inner">
+            <div class="card-icon">👗</div>
+            <h3>Smart Outfit Pairing</h3>
+            <p>AI-curated outfit combinations tailored to your body shape and preferences.</p>
+            <span class="badge badge-purple">Trending</span>
+          </div>
+        </div>
+        <div class="carousel-card" data-index="1">
+          <div class="card-inner">
+            <div class="card-icon">💇</div>
+            <h3>Hairstyle Advisor</h3>
+            <p>Personalized hairstyle recommendations based on your facial structure.</p>
+            <span class="badge badge-pink">Popular</span>
+          </div>
+        </div>
+        <div class="carousel-card" data-index="2">
+          <div class="card-inner">
+            <div class="card-icon">🎨</div>
+            <h3>Color Palette</h3>
+            <p>Custom color palette matched perfectly to your unique skin tone.</p>
+            <span class="badge badge-cyan">profile</span>
+          </div>
+        </div>
+        <div class="carousel-card" data-index="3">
+          <div class="card-inner">
+            <div class="card-icon">⌚</div>
+            <h3>Accessory Curation</h3>
+            <p>Watches, jewelry, and accessories curated to complement your style.</p>
+            <span class="badge badge-purple">Premium</span>
+          </div>
+        </div>
+        <div class="carousel-card" data-index="4">
+          <div class="card-inner">
+            <div class="card-icon">🛍️</div>
+            <h3>Shop Direct</h3>
+            <p>Direct product links from top retailers matched to your profile.</p>
+            <span class="badge badge-pink">Hot</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-nav">
+      <button class="carousel-btn" onclick="rotateCarousel(-1)">❮</button>
+      <div class="carousel-dots" id="carouselDots"></div>
+      <button class="carousel-btn" onclick="rotateCarousel(1)">❯</button>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how-it-works" style="background:var(--bg2);position:relative;">
+  <div class="orb orb-purple" style="width:300px;height:300px;top:20%;right:-80px;"></div>
+  <div style="text-align:center;margin-bottom:60px;">
+    <div class="section-tag">🔬 Process</div>
+    <h2 class="section-title">How <span class="gradient-text">StayBNB</span> Works</h2>
+    <p class="section-sub" style="margin:0 auto;">Three simple steps to transform your style with AI-powered analysis.</p>
+  </div>
+  <div class="steps-grid">
+    <div class="step-card glass-card">
+      <div class="step-number">01</div>
+      <div class="step-icon">📸</div>
+      <h3>Upload Photo</h3>
+      <p>Upload a clear photo through our simple interface for instant AI analysis.</p>
+    </div>
+    <div class="step-card glass-card">
+      <div class="step-number">02</div>
+      <div class="step-icon">🧠</div>
+      <h3>AI Analysis</h3>
+      <p>LLaMA 3.3 70B identifies features, skin tone, style personality, and body shape.</p>
+    </div>
+    <div class="step-card glass-card">
+      <div class="step-number">03</div>
+      <div class="step-icon">✅</div>
+      <h3>Get Styled</h3>
+      <p>Receive outfit combos, hairstyles, accessories, and direct shopping links!</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features" style="position:relative;">
+  <div class="orb orb-pink" style="width:350px;height:350px;top:30%;left:-100px;"></div>
+  <div style="text-align:center;margin-bottom:60px;">
+    <div class="section-tag">🎯 Features</div>
+    <h2 class="section-title">Everything You Need to <span class="gradient-text">Look Amazing</span></h2>
+    <p class="section-sub" style="margin:0 auto;">Powered by advanced AI to deliver data-driven fashion guidance.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card glass-card">
+      <div class="feature-icon">🔍</div>
+      <h3>Facial Analysis</h3>
+      <p>Identifies individual features and personality traits from your photo.</p>
+    </div>
+    <div class="feature-card glass-card">
+      <div class="feature-icon">📊</div>
+      <h3>Style Profiling</h3>
+      <p>Data-driven styling profile tailored to each user's unique attributes.</p>
+    </div>
+    <div class="feature-card glass-card">
+      <div class="feature-icon">👔</div>
+      <h3>Gender-Specific</h3>
+      <p>Advice for formal, business, casual, and party wear across all genders.</p>
+    </div>
+    <div class="feature-card glass-card">
+      <div class="feature-icon">🎨</div>
+      <h3>Color Science</h3>
+      <p>Custom color palette matched to your skin tone using color theory.</p>
+    </div>
+    <div class="feature-card glass-card">
+      <div class="feature-icon">👟</div>
+      <h3>Complete Outfits</h3>
+      <p>Full outfit combinations including footwear and accessory pairings.</p>
+    </div>
+    <div class="feature-card glass-card">
+      <div class="feature-icon">🔗</div>
+      <h3>Shop Instantly</h3>
+      <p>Direct product links from major retailers for easy purchasing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STYLE GALLERY WITH FILTERS -->
+<section class="section" id="styles" style="background:var(--bg2);position:relative;">
+  <div style="text-align:center;margin-bottom:40px;">
+    <div class="section-tag">💎 Gallery</div>
+    <h2 class="section-title">Style <span class="gradient-text">Categories</span></h2>
+    <p class="section-sub" style="margin:0 auto;">Explore AI-recommended fashion across different occasions and styles.</p>
+  </div>
+  <div class="filter-bar" style="justify-content:center;">
+    <button class="filter-pill active" onclick="filterGallery('all')">All Styles</button>
+    <button class="filter-pill" onclick="filterGallery('formal')">Formal</button>
+    <button class="filter-pill" onclick="filterGallery('business')">Business</button>
+    <button class="filter-pill" onclick="filterGallery('casual')">Casual</button>
+    <button class="filter-pill" onclick="filterGallery('party')">Party Wear</button>
+    <button class="filter-pill" onclick="filterGallery('accessories')">Accessories</button>
+    <button class="filter-pill" onclick="filterGallery('hairstyle')">Hairstyles</button>
+  </div>
+  <div class="gallery-grid" id="galleryGrid">
+    <!-- Filled by JS -->
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials" style="position:relative;">
+  <div class="orb orb-cyan" style="width:300px;height:300px;bottom:10%;right:5%;"></div>
+  <div style="text-align:center;margin-bottom:60px;">
+    <div class="section-tag">💬 Reviews</div>
+    <h2 class="section-title">Loved by <span class="gradient-text">Thousands</span></h2>
+  </div>
+  <div class="testimonial-grid">
+    <div class="testimonial-card glass-card">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>"StayBNB completely transformed how I dress. The color palette it recommended was spot-on for my skin tone!"</p>
+      <div class="test-author"><div class="test-avatar" style="background:var(--gradient);">SM</div><div><strong>Sarah M.</strong><span>Fashion Enthusiast</span></div></div>
+    </div>
+    <div class="testimonial-card glass-card">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>"The hairstyle recommendations were incredible. I showed my barber and he was impressed by how accurate it was."</p>
+      <div class="test-author"><div class="test-avatar" style="background:var(--gradient2);">JD</div><div><strong>James D.</strong><span>Software Engineer</span></div></div>
+    </div>
+    <div class="testimonial-card glass-card">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>"Finally, an AI that understands style! The outfit combos it creates are better than most personal shoppers."</p>
+      <div class="test-author"><div class="test-avatar" style="background:linear-gradient(135deg,#FFD700,#F72585);">AP</div><div><strong>Akira P.</strong><span>Designer</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-content glass-card">
+    <div class="orb orb-purple" style="width:200px;height:200px;top:-60px;left:-60px;"></div>
+    <h2 class="section-title" style="text-align:center;">Ready to <span class="gradient-text">Elevate Your Style</span>?</h2>
+    <p class="section-sub" style="text-align:center;margin:0 auto 32px;">Join 50,000+ users who've transformed their wardrobe with StayBNB.</p>
+    <div style="text-align:center;">
+      <button class="btn btn-primary btn-lg" onclick="openModal('signup')">🚀 Start Your Free Analysis</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <span class="footer-logo">StayBNB</span>
+      <p class="footer-desc">AI-powered fashion styling advisor using LLaMA 3.3 70B through Groq for personalized recommendations.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <a href="#">Features</a><a href="#">Pricing</a><a href="#">API</a><a href="#">Integrations</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#">About</a><a href="#">Blog</a><a href="#">Careers</a><a href="#">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 StayBNB. All rights reserved.</span>
+    <span>Powered by LLaMA 3.3 70B via Groq</span>
+  </div>
+</footer>
+
+<!-- AUTH MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+  <div class="modal-box glass-card" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalContent"><!-- Filled by JS --></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

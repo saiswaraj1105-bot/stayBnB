@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend_python
+      dockerfile: Dockerfile
+    container_name: staybnb-backend
+    restart: unless-stopped
+    environment:
+      - FLASK_ENV=development
+    networks:
+      - staynet
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+    container_name: staybnb-web
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - staynet
+
+networks:
+  staynet:
+    driver: bridge

@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+node_modules/
+.git/
+.env
+*.db
+uploads/
+Dockerfile
+docker-compose.override.yml
